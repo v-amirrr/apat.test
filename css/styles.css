@@ -1,0 +1,262 @@
+/* !colors */
+:root{
+    --blue: #173460;
+    --orange: #f4633a;
+    --hover: #ffffff22;
+    --p: #ffffffbb;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html{
+    font-size: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+body{
+    opacity: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    transition: opacity .5s;
+}
+
+::selection{
+    background-color: var(--blue);
+    color: var(--orange);
+}
+
+
+/* !home page */
+#home-page{
+    width: 100%;
+    height: 100vh;
+    transition: all .2s;
+    background-color: #00000066;
+    position: relative;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-img1{
+    width: 12rem;
+    transition: all .5s;
+    margin-top: 1rem;
+}
+
+#logo-img2{
+    width: 9.5rem;
+    transition: all .5s;
+    position: fixed;
+    left: 1.5rem;
+    top: 1.5rem;
+    opacity: 0;
+    display: none;
+}
+
+#bg1, #bg2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -5;
+}
+
+#bg1{
+    opacity: 1;
+}
+
+#bg2{
+    opacity: 0;
+}
+
+.close{
+    transition: all 2s;
+    filter: blur(2px);
+    opacity: 0 !important;
+}
+
+.open{
+    transition: all 2s;
+    filter: blur(0px);
+    opacity: 1 !important;
+}
+
+#line1, #line2{
+    margin: auto;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    border: none;
+    width: 30rem;
+    height: 2px;
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#line2{
+    top: 12.3rem;
+}
+
+#home-page nav{
+    position: absolute;
+    top: 8.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top .4s;
+    border-radius: 10px;
+    display: flex;
+}
+
+#home-page nav a{
+    margin: 0 1rem;
+    color: var(--p);
+    transition: background-color .5s, color .5s;
+    padding: .8rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    z-index: 999;
+    text-transform: uppercase;
+}
+
+
+#home-page nav a:hover{
+    background-color: var(--hover);
+    color: #fff;
+}
+
+#language{
+    position: fixed;
+    top: 2.8rem;
+    right: 2rem;
+    color: #fff;
+    cursor: pointer;
+    padding: .5rem;
+    transition: background-color .2s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#language:hover{
+    background-color: var(--hover);
+}
+
+#language-change{
+    position: fixed;
+    top: 3rem;
+    right: 5.5rem;
+    background-color: var(--hover);
+    border-radius: 20px;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .2s;
+    font-weight: 900;
+}
+
+#language-change a{
+    margin: .6rem;
+    color: #fff;
+}
+
+#text{
+    color: #fff;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    position: relative;
+    top: 10rem;
+    user-select: text;
+}
+
+#company-name{
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #ffffff57;
+    border: solid 1px;
+    border-top: none;
+    border-radius: 10px 10px 20px 20px;
+    padding: 1rem;
+    transition: all 1s;
+    -webkit-box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.75);
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
+}
+
+#company-name span{
+    transition: color 1s;
+}
+
+#company-name:hover{
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#sentences{
+    margin: 3rem;
+    font-size: 1.4rem;
+    animation: color-sen 3s infinite alternate;
+    border-bottom: solid 1px #ffffff55;
+    border-radius: 0 0 20px 20px;
+}
+
+/* @keyframes color-sen {
+    from{color: var(--p); transform: scale(1);}
+    to{color: #fff; transform: scale(1.1);}
+} */
+
+#down{
+    color: var(--p);
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 48%;
+    margin: 1rem;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .5s;
+    transition: background-color .2s;
+    border-radius: 50%;
+    animation: down infinite 1s alternate;
+}
+
+#down i{
+    transition: opacity .5s;
+    transition: transform .5s;
+}
+
+#down:hover{
+    background-color: var(--hover);
+}
+
+@keyframes down {
+    from{transform: scale(1.1);}
+    to{transform: scale(1.3);}
+}
+
+
+/* !services page */
+#services{
+    width: 100%;
+    height: 100vh;
+}
