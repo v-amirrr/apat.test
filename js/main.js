@@ -14,69 +14,120 @@ setInterval(() => {
 
 // ! change language popup
 const language = document.querySelector("#language");
+const languageIcon = document.querySelector("#language-icon");
 const languageChange = document.querySelector("#language-change");
-language.addEventListener("click", () => {
-    if(languageChange.style.opacity == 1){
-        languageChange.style.opacity = 0;
-        languageChange.classList.remove("animate__jackInTheBox");
-        languageChange.classList.add("animate__rollOut");
-    }else{
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    languageIcon.addEventListener("click", () => {
+        if(languageChange.style.opacity == 0){
+            languageChange.style.opacity = 1;
+            languageChange.classList.remove("animate__rollOut");
+            languageChange.classList.add("animate__jackInTheBox");
+        }else{
+            languageChange.style.opacity = 0;
+            languageChange.classList.remove("animate__jackInTheBox");
+            languageChange.classList.add("animate__rollOut");
+        }
+    });
+}else{
+    // false for not mobile device
+    languageIcon.addEventListener("mouseenter", () => {
         languageChange.style.opacity = 1;
         languageChange.classList.remove("animate__rollOut");
         languageChange.classList.add("animate__jackInTheBox");
+        language.addEventListener("mousemove", () => {
+            languageChange.style.opacity = 1;
+        });
+    });
+    
+    language.addEventListener("mouseleave", () => {
+        languageChange.classList.remove("animate__jackInTheBox");
+        languageChange.classList.add("animate__rollOut");
+        languageChange.style.opacity = 0;
+    });
+}
+
+
+// ! down icon and up icon
+const downIcon = document.querySelector("#down-icon i");
+const downLink = document.querySelector("#down-link");
+window.onscroll = () => {
+    if(pageYOffset > 50){
+        
+        if(downIcon.className == "bi bi-chevron-double-down"){
+            
+            downLink.setAttribute("href", "#body");
+            downIcon.style.transform = "scale(0)";
+            setTimeout(() => {
+                downIcon.className = "bi bi-chevron-double-up";
+                downIcon.style.transform = "scale(1)";
+            }, 200);
+            
+        }
+        
+    }else if ((downIcon.className == "bi bi-chevron-double-up")){
+        
+        downLink.setAttribute("href", "#services");
+        downIcon.style.transform = "scale(0)";
+        setTimeout(() => {
+            downIcon.className = "bi bi-chevron-double-down";
+            downIcon.style.transform = "scale(1)";
+        }, 200);
+        
     }
-});
+};
 
 
 // !load function
 const body = document.querySelector("body");
 function load() {
-    setTimeout(() => {
-        body.style.opacity = 1;
-        document.querySelector("#text").className = "animate__animated animate__flipInX";
-        setTimeout(() => {
-            document.querySelector("#text").className = "";
-            document.querySelector("#company-name").style.backdropFilter = "blur(10px)";
-        }, 2000);
+    body.style.opacity = 1;
 
-        document.querySelector("#language").className = "animate__animated animate__lightSpeedInRight animate__delay-1s";
-        document.querySelectorAll("#company-name span").forEach(item => {
-            setTimeout(() => {
-                item.style.color = "#fff";
-            }, 3000);
+    setTimeout(() => {
+        document.querySelector("#text-company-name").classList.add("animation-class");
+    }, 2000);
+
+    document.querySelectorAll("#text-company-name span").forEach(item => {
+        setTimeout(() => {
+            item.style.color = "#fff";
+        }, 3000);
+    });
+
+    setTimeout(() => {
+        var typed = new Typed('.sentences', {
+            strings: ["", "<strong>We make better world for all creatures.</strong>"],
+            typeSpeed: 60,
+            suffle: true,
+            showCursor: false
         });
-        // !scroll reveal
-    }, 500);
-}
+    }, 3000);
+};
 
 setTimeout(() => {
     body.style.opacity = 1;
-}, 3000);
+
+    setTimeout(() => {
+        document.querySelector("#text-company-name").classList.add("animation-class");
+    }, 2000);
+
+    document.querySelectorAll("#text-company-name span").forEach(item => {
+        setTimeout(() => {
+            item.style.color = "#fff";
+        }, 3000);
+    });
+
+    setTimeout(() => {
+        var typed = new Typed('.sentences', {
+            strings: ["", "<strong>We make better world for all creatures.</strong>"],
+            typeSpeed: 60,
+            suffle: true,
+            showCursor: false
+        });
+    }, 3000);
+}, 5000);
 
 
-// ! down and up icon
-window.onscroll = () => {
-    if(window.pageYOffset > 50){
-        if(document.querySelector("#down i").className != "fas fa-hand-point-up"){
-            document.querySelector("#down-link").setAttribute("href", "#body");
-            document.querySelector("#down i").style.transform = "scale(0)";
-            setTimeout(() => {
-                document.querySelector("#down i").className = "fas fa-hand-point-up";
-            }, 300);
-            setTimeout(() => {
-                document.querySelector("#down i").style.transform = "scale(1)";
-            }, 300);
-        }
-    }else{
-        if(document.querySelector("#down i").className != "fas fa-hand-point-down"){
-            document.querySelector("#down-link").setAttribute("href", "#services");
-            document.querySelector("#down i").style.transform = "scale(0)";
-            setTimeout(() => {
-                document.querySelector("#down i").className = "fas fa-hand-point-down";
-            }, 300);
-            setTimeout(() => {
-                document.querySelector("#down i").style.transform = "scale(1)";
-            }, 300);
-        }
-    }
-};
+
+
+  
