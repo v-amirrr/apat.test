@@ -73,12 +73,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: scale(.8);
 }
 
-#logo-img{
+.logo-img{
     width: 12rem;
     transition: all .5s;
-    margin-top: 1rem;
+    margin: 1rem;
 }
 
 #home nav{
@@ -146,6 +147,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
 }
 
 #language-icon span{
