@@ -1,22 +1,53 @@
 // !change background of first page
 const bg1 = document.querySelector("#bg1");
 const bg2 = document.querySelector("#bg2");
+const bg3 = document.querySelector("#bg3");
+
+setTimeout(() => {
+    bg1.className = "close";
+    bg2.className = "open";
+    bg3.className = "close";
+}, 15000);
+
+setTimeout(() => {
+    bg1.className = "close";
+    bg2.className = "close";
+    bg3.className = "open";
+}, 30000);
+
+setTimeout(() => {
+    bg1.className = "open";
+    bg2.className = "close";
+    bg3.className = "close";
+}, 45000);
+
 setInterval(() => {
-    if(bg1.className === "close"){
-        bg1.className = "open";
-        bg2.className = "close";
-    }else{
+    setTimeout(() => {
         bg1.className = "close";
         bg2.className = "open";
-    }
-}, 20000);
+        bg3.className = "close";
+    }, 15000);
+
+    setTimeout(() => {
+        bg1.className = "close";
+        bg2.className = "close";
+        bg3.className = "open";
+    }, 30000);
+
+    setTimeout(() => {
+        bg1.className = "open";
+        bg2.className = "close";
+        bg3.className = "close";
+    }, 45000);
+}, 65000);
+
+
 
 
 // ! change language popup
 const language = document.querySelector("#language");
 const languageIcon = document.querySelector("#language-icon");
 const languageChange = document.querySelector("#language-change");
-
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     // true for mobile device
     languageIcon.addEventListener("click", () => {
@@ -49,6 +80,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 }
 
 
+
+
 // ! down icon and up icon
 const downIcon = document.querySelector("#down-icon i");
 const downLink = document.querySelector("#down-link");
@@ -66,9 +99,9 @@ window.onscroll = () => {
             
         }
         
-    }else if ((downIcon.className == "bi bi-chevron-double-up")){
+    }else if((downIcon.className == "bi bi-chevron-double-up")){
         
-        downLink.setAttribute("href", "#services");
+        downLink.setAttribute("href", "#footer");
         downIcon.style.transform = "scale(0)";
         setTimeout(() => {
             downIcon.className = "bi bi-chevron-double-down";
@@ -79,55 +112,70 @@ window.onscroll = () => {
 };
 
 
-// !load function
-const body = document.querySelector("body");
-function load() {
-    body.style.opacity = 1;
 
-    setTimeout(() => {
+
+// !load function
+function load() {
+    document.body.style.opacity = 1;
+
+    setInterval(() => {
         document.querySelector("#text-company-name").classList.add("animation-class");
-    }, 2000);
+        setTimeout(() => {
+            document.querySelector("#text-company-name").classList.remove("animation-class");
+        }, 3000);
+    }, 10000);
 
     document.querySelectorAll("#text-company-name span").forEach(item => {
         setTimeout(() => {
             item.style.color = "#fff";
         }, 3000);
     });
-
-    setTimeout(() => {
-        var typed = new Typed('.sentences', {
-            strings: ["", "<strong>We make better world for all creatures.</strong>"],
-            typeSpeed: 60,
-            suffle: true,
-            showCursor: false
-        });
-    }, 3000);
 };
 
-setTimeout(() => {
-    body.style.opacity = 1;
-
-    setTimeout(() => {
-        document.querySelector("#text-company-name").classList.add("animation-class");
-    }, 2000);
-
-    document.querySelectorAll("#text-company-name span").forEach(item => {
-        setTimeout(() => {
-            item.style.color = "#fff";
-        }, 3000);
-    });
-
-    setTimeout(() => {
-        var typed = new Typed('.sentences', {
-            strings: ["", "<strong>We make better world for all creatures.</strong>"],
-            typeSpeed: 60,
-            suffle: true,
-            showCursor: false
-        });
-    }, 3000);
-}, 5000);
 
 
 
+// ! pages
+const nav = document.querySelector("#home nav");
+const logo = document.querySelector("#logo");
+const text = document.querySelector("#text");
 
-  
+const home = document.querySelector("#home");
+const services = document.querySelector("#services");
+
+const homeButton = document.querySelector("#home-button");
+const servicesButton = document.querySelector("#services-button");
+const aboutUsButton = document.querySelector("#about-us-button");
+const contactUsButton = document.querySelector("#contact-us-button");
+
+// ! services page
+servicesButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    home.style.backgroundColor = "#00000099";
+    nav.style.top = "2rem";
+
+    logo.classList.add("animate__animated", "animate__fadeOutDown");
+    text.classList.add("animate__animated", "animate__fadeOutDown");
+
+    services.style.visibility = "visible";
+    services.classList.remove("animate__animated", "animate__fadeOutDown");
+    services.classList.add("animate__animated", "animate__fadeInUp");
+});
+
+// ! home page
+homeButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    home.style.backgroundColor = "#00000066";
+    nav.style.top = "9.5rem";
+
+    logo.classList.remove("animate__animated", "animate__fadeOutDown");
+    text.classList.remove("animate__animated", "animate__fadeOutDown");
+    logo.classList.add("animate__animated", "animate__fadeInUp");
+    text.classList.add("animate__animated", "animate__fadeInUp");
+
+    services.classList.remove("animate__animated", "animate__fadeInUp");
+    services.classList.add("animate__animated", "animate__fadeOutDown");
+});
+
