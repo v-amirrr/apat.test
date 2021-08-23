@@ -142,6 +142,8 @@ const text = document.querySelector("#text");
 
 const home = document.querySelector("#home");
 const services = document.querySelector("#services");
+const aboutUs = document.querySelector("#about-us");
+const contactUs = document.querySelector("#contact-us");
 
 const homeButton = document.querySelector("#home-button");
 const servicesButton = document.querySelector("#services-button");
@@ -149,14 +151,30 @@ const aboutUsButton = document.querySelector("#about-us-button");
 const contactUsButton = document.querySelector("#contact-us-button");
 
 // ! services page
-servicesButton.addEventListener("click", (e) => {
+servicesButton.addEventListener("click", e => {
     e.preventDefault();
 
-    home.style.backgroundColor = "#00000099";
+    homeButton.style.color = "var(--p)";
+    servicesButton.style.color = "#fff";
+    aboutUsButton.style.color = "var(--p)";
+    contactUsButton.style.color = "var(--p)";
+
+    homeButton.style.backgroundColor = "";
+    servicesButton.style.backgroundColor = "var(--hover)";
+    aboutUsButton.style.backgroundColor = "";
+    contactUsButton.style.backgroundColor = "";
+
+    home.style.backgroundColor = "#00000077";
     nav.style.top = "2rem";
 
     logo.classList.add("animate__animated", "animate__fadeOutDown");
     text.classList.add("animate__animated", "animate__fadeOutDown");
+
+    aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
+    aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
+
+    contactUs.classList.remove("animate__animated", "animate__fadeInUp");
+    contactUs.classList.add("animate__animated", "animate__fadeOutDown");
 
     services.style.visibility = "visible";
     services.classList.remove("animate__animated", "animate__fadeOutDown");
@@ -164,8 +182,18 @@ servicesButton.addEventListener("click", (e) => {
 });
 
 // ! home page
-homeButton.addEventListener("click", (e) => {
+homeButton.addEventListener("click", e => {
     e.preventDefault();
+
+    homeButton.style.color = "#fff";
+    servicesButton.style.color = "var(--p)";
+    aboutUsButton.style.color = "var(--p)";
+    contactUsButton.style.color = "var(--p)";
+    
+    homeButton.style.backgroundColor = "var(--hover)";
+    servicesButton.style.backgroundColor = "";
+    aboutUsButton.style.backgroundColor = "";
+    contactUsButton.style.backgroundColor = "";
 
     home.style.backgroundColor = "#00000066";
     nav.style.top = "9.5rem";
@@ -175,7 +203,186 @@ homeButton.addEventListener("click", (e) => {
     logo.classList.add("animate__animated", "animate__fadeInUp");
     text.classList.add("animate__animated", "animate__fadeInUp");
 
+    aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
+    aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
+    
     services.classList.remove("animate__animated", "animate__fadeInUp");
     services.classList.add("animate__animated", "animate__fadeOutDown");
+
+    contactUs.classList.remove("animate__animated", "animate__fadeInUp");
+    contactUs.classList.add("animate__animated", "animate__fadeOutDown");
 });
 
+// ! about us page
+aboutUsButton.addEventListener("click", e => {
+    e.preventDefault();
+
+    homeButton.style.color = "var(--p)";
+    servicesButton.style.color = "var(--p)";
+    aboutUsButton.style.color = "#fff";
+    contactUsButton.style.color = "var(--p)";
+
+    homeButton.style.backgroundColor = "";
+    servicesButton.style.backgroundColor = "";
+    aboutUsButton.style.backgroundColor = "var(--hover)";
+    contactUsButton.style.backgroundColor = "";
+
+    home.style.backgroundColor = "#00000077";
+    nav.style.top = "2rem";
+
+    logo.classList.add("animate__animated", "animate__fadeOutDown");
+    text.classList.add("animate__animated", "animate__fadeOutDown");
+
+    services.classList.remove("animate__animated", "animate__fadeInUp");
+    services.classList.add("animate__animated", "animate__fadeOutDown");
+
+    contactUs.classList.remove("animate__animated", "animate__fadeInUp");
+    contactUs.classList.add("animate__animated", "animate__fadeOutDown");
+
+    aboutUs.style.visibility = "visible";
+    aboutUs.classList.remove("animate__animated", "animate__fadeOutDown");
+    aboutUs.classList.add("animate__animated", "animate__fadeInUp");
+});
+
+// ! contact us page
+contactUsButton.addEventListener("click", e => {
+    e.preventDefault();
+
+    homeButton.style.color = "var(--p)";
+    servicesButton.style.color = "var(--p)";
+    aboutUsButton.style.color = "var(--p)";
+    contactUsButton.style.color = "#fff";
+
+    homeButton.style.backgroundColor = "";
+    servicesButton.style.backgroundColor = "";
+    aboutUsButton.style.backgroundColor = "";
+    contactUsButton.style.backgroundColor = "var(--hover";
+
+    home.style.backgroundColor = "#00000077";
+    nav.style.top = "2rem";
+
+    logo.classList.add("animate__animated", "animate__fadeOutDown");
+    text.classList.add("animate__animated", "animate__fadeOutDown");
+
+    services.classList.remove("animate__animated", "animate__fadeInUp");
+    services.classList.add("animate__animated", "animate__fadeOutDown");
+
+    aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
+    aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
+
+    contactUs.style.visibility = "visible";
+    contactUs.classList.remove("animate__animated", "animate__fadeOutDown");
+    contactUs.classList.add("animate__animated", "animate__fadeInUp");
+});
+
+
+
+
+// ! services windows
+const servicesPart1 = document.querySelector("#services-part1");
+const servicesPart2 = document.querySelector("#services-part2");
+const servicesPart3 = document.querySelector("#services-part3");
+
+const servicesPart1CloseIcon1 = document.querySelector(".services-window.one span");
+const servicesPart1CloseIcon2 = document.querySelector(".services-window.two span");
+const servicesPart1CloseIcon3 = document.querySelector(".services-window.three span");
+
+const servicesWindowOne = document.querySelector(".services-window.one");
+const servicesWindowTwo = document.querySelector(".services-window.two");
+const servicesWindowThree = document.querySelector(".services-window.three");
+
+const servicesWindow = document.querySelector("#services-window");
+const blurEffect = document.querySelector(".blur-effect");
+
+servicesPart1.addEventListener("click", () => {
+    blurEffect.style.display = "block";
+    blurEffect.style.animation = "opacity-blur-ineffect-animation .5s"
+    blurEffect.style.opacity = "1";
+
+    servicesWindow.style.zIndex = 6;
+    servicesWindowOne.style.transform = "scale(1)";
+});
+
+servicesPart1CloseIcon1.addEventListener("click", () => {
+    servicesWindowOne.style.transform = "scale(0)";
+    
+    setTimeout(() => {
+        blurEffect.style.animation = "opacity-blur-outeffect-animation .5s"
+        blurEffect.style.opacity = "0";
+        servicesWindow.style.zIndex = -1;
+    }, 500);
+
+    setTimeout(() => {
+        blurEffect.style.display = "none";
+    }, 1000);
+});
+
+
+servicesPart2.addEventListener("click", () => {
+    blurEffect.style.display = "block";
+    blurEffect.style.animation = "opacity-blur-ineffect-animation .5s"
+    blurEffect.style.opacity = "1";
+
+    servicesWindow.style.zIndex = 6;
+    servicesWindowTwo.style.transform = "scale(1)";
+});
+
+servicesPart1CloseIcon2.addEventListener("click", () => {
+    servicesWindowTwo.style.transform = "scale(0)";
+    
+    setTimeout(() => {
+        blurEffect.style.animation = "opacity-blur-outeffect-animation .5s"
+        blurEffect.style.opacity = "0";
+        servicesWindow.style.zIndex = -1;
+    }, 500);
+
+    setTimeout(() => {
+        blurEffect.style.display = "none";
+    }, 1000);
+});
+
+
+servicesPart3.addEventListener("click", () => {
+    blurEffect.style.display = "block";
+    blurEffect.style.animation = "opacity-blur-ineffect-animation .5s"
+    blurEffect.style.opacity = "1";
+
+    servicesWindow.style.zIndex = 6;
+    servicesWindowThree.style.transform = "scale(1)";
+});
+
+servicesPart1CloseIcon3.addEventListener("click", () => {
+    servicesWindowThree.style.transform = "scale(0)";
+    
+    setTimeout(() => {
+        blurEffect.style.animation = "opacity-blur-outeffect-animation .5s"
+        blurEffect.style.opacity = "0";
+        servicesWindow.style.zIndex = -1;
+    }, 500);
+
+    setTimeout(() => {
+        blurEffect.style.display = "none";
+    }, 1000);
+});
+
+
+
+
+const swiper = new Swiper('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+  
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+
+    effect: 'cube',
+    cubeEffect: {
+      slideShadows: false,
+    },
+
+    autoplay: {
+        delay: 10000,
+    },
+  });

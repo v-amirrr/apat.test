@@ -28,13 +28,16 @@
 
     <!-- !Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body dir="rtl" onload="load(this)" id="body">
 
     <section id="home">
 
-        <img src="./img/bg1.jpg" alt="Background1 of first page" id="bg1">
+        <img src="./img/2.jpg" alt="Background1 of first page" id="bg1">
         <img src="./img/bg2.jpg" alt="Background2 of first page" id="bg2">
         <img src="./img/bg3.jpg" alt="Background3 of first page" id="bg3">
         
@@ -46,9 +49,9 @@
             <hr id="line1">
             <ul>
                 <a href="" class="btn md-ripples ripples-light ripples" id="home-button">صفحه اصلی</a>
-                <a href="#" class="btn md-ripples ripples-light ripples" id="services-button">خدمات</a>
-                <a href="#" class="btn md-ripples ripples-light ripples" id="about-us-button">درباره ما</a>
-                <a href="#" class="btn md-ripples ripples-light ripples" id="contact-us-button">ارتباط با ما</a>
+                <a href="" class="btn md-ripples ripples-light ripples" id="services-button">خدمات</a>
+                <a href="" class="btn md-ripples ripples-light ripples" id="about-us-button">درباره ما</a>
+                <a href="" class="btn md-ripples ripples-light ripples" id="contact-us-button">ارتباط با ما</a>
             </ul>
             <hr id="line2">
         </nav>
@@ -87,24 +90,219 @@
 
         <div id="services-logo">
             <img src="./img/services-logo2.svg" alt="Services Logo">
-            <div id="services-part1">
+            <div id="services-part1" class="btn md-ripples ripples-light ripples">
                 <div class="services-text">
                     برق
                 </div>
             </div>
-            <div id="services-part2">
+            <div id="services-part2" class="btn md-ripples ripples-light ripples">
                 <div class="services-text">
                     صنعت
                 </div>
             </div>
-            <div id="services-part3">
+            <div id="services-part3" class="btn md-ripples ripples-light ripples">
                 <div class="services-text">
                     پیمانکاری آب و تاسیسات
                 </div>
             </div>
         </div>
+
+    </section>
+
+
+    <div class="blur-effect"></div>
+
+
+    <section id="services-window">
+
+        <div class="services-window one">
+            <span class="material-icons btn md-ripples ripples-light ripples">close</span>
+            <h2>اجرای پرژوه‌های:</h2>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">خطوط انتقال و توزیع برق</p>
+                        <img src="./img/services/services-part1-pic1.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">پست برق</p>
+                        <img src="./img/services/services-part1-pic2.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">شبکه‌های توزیع هوایی برق</p>
+                        <img src="./img/services/services-part1-pic3.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">تاسیسات زمینی برق شهری</p>
+                        <img src="./img/services/services-part1-pic4.png" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">طراحی و راه‌اندازی نیروگاه‌های خورشیدی، بادی، زمین‌گرمایی و جاذبه‌ای</p>
+                        <img src="./img/services/services-part1-pic5.jpg" alt="" class="services-slider-img">
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
         </div>
 
+
+        <div class="services-window two">
+            <span class="material-icons btn md-ripples ripples-light ripples">close</span>
+            <h2>اجرای پرژوه‌های:</h2>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">طراحی و ساخت خطوط تولید</p>
+                        <img src="./img/services/services-part2-pic1.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">بهینه‌سازی خطوط تولید</p>
+                        <img src="./img/services/services-part2-pic2.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">مونتاژ خطوط تولید</p>
+                        <img src="./img/services/services-part2-pic3.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">مشاوره صنعتی</p>
+                        <img src="./img/services/services-part2-pic4.png" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">مهندسی معکوس</p>
+                        <img src="./img/services/services-part2-pic5.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">ماشین‌های مخصوص</p>
+                        <img src="./img/services/services-part2-pic6.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">فورج</p>
+                        <img src="./img/services/services-part2-pic7.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">انواع پرس ضربه‌ای و هیدرولیکی</p>
+                        <img src="./img/services/services-part2-pic8.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">ماشین‌کاری</p>
+                        <img src="./img/services/services-part2-pic9.jpg" alt="" class="services-slider-img">
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+
+        <div class="services-window three">
+            <span class="material-icons btn md-ripples ripples-light ripples">close</span>
+            <h2>اجرای پرژوه‌های:</h2>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">خطوط انتقال آب و فاضلاب</p>
+                        <img src="./img/services/services-part3-pic1.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">تصفیه‌خانه</p>
+                        <img src="./img/services/services-part3-pic2.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">انشعابات آب و فاضلاب</p>
+                        <img src="./img/services/services-part3-pic3.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">اصلاح شبکه آب و فاضلاب</p>
+                        <img src="./img/services/services-part3-pic4.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">شبکه توزیع آب و فاضلاب</p>
+                        <img src="./img/services/services-part3-pic5.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">تاسیسات: خطوط انتقال نفت و گاز</p>
+                        <img src="./img/services/services-part3-pic6.jpg" alt="" class="services-slider-img">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="services-slider-text">تاسیسات: تجهیزات آب، نفت و گاز</p>
+                        <img src="./img/services/services-part3-pic7.jpg" alt="" class="services-slider-img">
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+        
+    </section>
+
+
+    <section id="about-us">
+        
+        <div id="about-us-window">
+            <img src="./img/about-us.jpg" alt="" id="about-us-window-bg">
+
+            <div id="about-us-window-right">
+                <p>
+                    این شرکت در سال 1399 با هدف فعالیت در حوزه‌های فنی مهندسی، پیمانکاری و طراحی ساخت و تولید و بهینه‌سازی خطوط تولید تاسیس گردید و در انتهای سال 1399 تایید صلاحیت پیمانکاری آب و تاسیسات تجهیزات را از سازمان‌های مربوطه اخذ نمود و همزمان در سایر اهداف تعریف شده شروع به کار نموده است.                </p>
+            </div>
+
+            <div id="about-us-window-left">
+                <img src="./img/logo.svg" alt="">
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="contact-us">
+        <div id="contact-us-phone">
+            <i class="bi bi-telephone-fill contact-us-social-icon"></i>
+            <a href="tel:09153149893">09153149893</a>
+            <a href="tel:09153015154">09153015154</a>
+            <p>تل‌فکس: ۰۵۱۳۳۴۳۹۲۷۵</p>
+        </div>
+
+        <div id="contact-us-location">
+            <i class="bi bi-geo-alt-fill contact-us-social-icon"></i>
+            <address>
+                <a href="">
+                    آدرس: ایران، خراسان رضوی، مشهد، شهرک فناوری‌های برتر، خیابان صنعت ۹، پلاک ۲۵۵
+                </a>
+            </address>
+        </div>
+
+        <div id="contact-us-social">
+            <i class="fas fa-users contact-us-social-icon" ></i>
+            <i class="bi bi-envelope-fill"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-telegram"></i>
+            <i class="bi bi-whatsapp"></i>
+        </div>
     </section>
 
 
@@ -114,7 +312,8 @@
 
     <!-- !JavaScript Files -->
     <script src="./js/ripples.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
