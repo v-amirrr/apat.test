@@ -83,33 +83,33 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 
 // ! down icon and up icon
-const downIcon = document.querySelector("#down-icon i");
-const downLink = document.querySelector("#down-link");
-window.onscroll = () => {
-    if(pageYOffset > 50){
+// const downIcon = document.querySelector("#down-icon i");
+// const downLink = document.querySelector("#down-link");
+// window.onscroll = () => {
+//     if(pageYOffset > 50){
         
-        if(downIcon.className == "bi bi-chevron-double-down"){
+//         if(downIcon.className == "bi bi-chevron-double-down"){
             
-            downLink.setAttribute("href", "#body");
-            downIcon.style.transform = "scale(0)";
-            setTimeout(() => {
-                downIcon.className = "bi bi-chevron-double-up";
-                downIcon.style.transform = "scale(1)";
-            }, 200);
+//             downLink.setAttribute("href", "#body");
+//             downIcon.style.transform = "scale(0)";
+//             setTimeout(() => {
+//                 downIcon.className = "bi bi-chevron-double-up";
+//                 downIcon.style.transform = "scale(1)";
+//             }, 200);
             
-        }
+//         }
         
-    }else if((downIcon.className == "bi bi-chevron-double-up")){
+//     }else if((downIcon.className == "bi bi-chevron-double-up")){
         
-        downLink.setAttribute("href", "#footer");
-        downIcon.style.transform = "scale(0)";
-        setTimeout(() => {
-            downIcon.className = "bi bi-chevron-double-down";
-            downIcon.style.transform = "scale(1)";
-        }, 200);
+//         downLink.setAttribute("href", "#footer");
+//         downIcon.style.transform = "scale(0)";
+//         setTimeout(() => {
+//             downIcon.className = "bi bi-chevron-double-down";
+//             downIcon.style.transform = "scale(1)";
+//         }, 200);
         
-    }
-};
+//     }
+// };
 
 
 
@@ -131,6 +131,10 @@ function load() {
         }, 3000);
     });
 };
+
+setTimeout(() => {
+    document.body.style.opacity = 1;
+}, 3000);
 
 
 
@@ -317,7 +321,6 @@ servicesPart1CloseIcon1.addEventListener("click", () => {
     }, 1000);
 });
 
-
 servicesPart2.addEventListener("click", () => {
     blurEffect.style.display = "block";
     blurEffect.style.animation = "opacity-blur-ineffect-animation .5s"
@@ -340,7 +343,6 @@ servicesPart1CloseIcon2.addEventListener("click", () => {
         blurEffect.style.display = "none";
     }, 1000);
 });
-
 
 servicesPart3.addEventListener("click", () => {
     blurEffect.style.display = "block";
@@ -368,6 +370,7 @@ servicesPart1CloseIcon3.addEventListener("click", () => {
 
 
 
+// ! image slider
 const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,
@@ -385,4 +388,50 @@ const swiper = new Swiper('.swiper-container', {
     autoplay: {
         delay: 10000,
     },
-  });
+});
+
+
+
+
+// ! footer
+const date = new Date();
+document.querySelector("#footer p").innerHTML = `${date.getFullYear()} &#169; Copyright`;
+
+
+
+
+// ! social media button
+const icon0 = document.querySelector(".icon0");
+const icon1 = document.querySelector(".icon1");
+const icon2 = document.querySelector(".icon2");
+const icon3 = document.querySelector(".icon3");
+let num = 1;
+icon0.addEventListener("click", () => {
+    if(num == 1){
+        icon1.style.bottom = "4rem";
+        icon1.style.right = "2.5rem";
+        icon1.style.transform = "scale(1)";
+    
+        icon2.style.top = "4rem";
+        icon2.style.right = "5.5rem";
+        icon2.style.transform = "scale(1)";
+    
+        icon3.style.right = "5rem";
+        icon3.style.transform = "scale(1)";
+
+        num++;
+    } else {
+        icon1.style.bottom = "0";
+        icon1.style.right = "2.5rem";
+        icon1.style.transform = "scale(0)";
+    
+        icon2.style.top = "0";
+        icon2.style.right = "5.5rem";
+        icon2.style.transform = "scale(0)";
+    
+        icon3.style.right = "10em";
+        icon3.style.transform = "scale(0)";
+        
+        num--;
+    }
+});
