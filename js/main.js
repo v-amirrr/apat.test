@@ -1,45 +1,45 @@
-// !change background of first page
-const bg1 = document.querySelector("#bg1");
-const bg2 = document.querySelector("#bg2");
-const bg3 = document.querySelector("#bg3");
+// // !change background of first page
+// // const bg1 = document.querySelector("#bg1");
+// // const bg2 = document.querySelector("#bg2");
+// // const bg3 = document.querySelector("#bg3");
 
-setTimeout(() => {
-    bg1.className = "close";
-    bg2.className = "open";
-    bg3.className = "close";
-}, 15000);
+// // setTimeout(() => {
+// //     bg1.className = "close";
+// //     bg2.className = "open";
+// //     bg3.className = "close";
+// // }, 15000);
 
-setTimeout(() => {
-    bg1.className = "close";
-    bg2.className = "close";
-    bg3.className = "open";
-}, 30000);
+// // setTimeout(() => {
+// //     bg1.className = "close";
+// //     bg2.className = "close";
+// //     bg3.className = "open";
+// // }, 30000);
 
-setTimeout(() => {
-    bg1.className = "open";
-    bg2.className = "close";
-    bg3.className = "close";
-}, 45000);
+// // setTimeout(() => {
+// //     bg1.className = "open";
+// //     bg2.className = "close";
+// //     bg3.className = "close";
+// // }, 45000);
 
-setInterval(() => {
-    setTimeout(() => {
-        bg1.className = "close";
-        bg2.className = "open";
-        bg3.className = "close";
-    }, 15000);
+// // setInterval(() => {
+// //     setTimeout(() => {
+// //         bg1.className = "close";
+// //         bg2.className = "open";
+// //         bg3.className = "close";
+// //     }, 15000);
 
-    setTimeout(() => {
-        bg1.className = "close";
-        bg2.className = "close";
-        bg3.className = "open";
-    }, 30000);
+// //     setTimeout(() => {
+// //         bg1.className = "close";
+// //         bg2.className = "close";
+// //         bg3.className = "open";
+// //     }, 30000);
 
-    setTimeout(() => {
-        bg1.className = "open";
-        bg2.className = "close";
-        bg3.className = "close";
-    }, 45000);
-}, 65000);
+// //     setTimeout(() => {
+// //         bg1.className = "open";
+// //         bg2.className = "close";
+// //         bg3.className = "close";
+// //     }, 45000);
+// // }, 65000);
 
 
 
@@ -82,38 +82,6 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 
 
-// ! down icon and up icon
-// const downIcon = document.querySelector("#down-icon i");
-// const downLink = document.querySelector("#down-link");
-// window.onscroll = () => {
-//     if(pageYOffset > 50){
-        
-//         if(downIcon.className == "bi bi-chevron-double-down"){
-            
-//             downLink.setAttribute("href", "#body");
-//             downIcon.style.transform = "scale(0)";
-//             setTimeout(() => {
-//                 downIcon.className = "bi bi-chevron-double-up";
-//                 downIcon.style.transform = "scale(1)";
-//             }, 200);
-            
-//         }
-        
-//     }else if((downIcon.className == "bi bi-chevron-double-up")){
-        
-//         downLink.setAttribute("href", "#footer");
-//         downIcon.style.transform = "scale(0)";
-//         setTimeout(() => {
-//             downIcon.className = "bi bi-chevron-double-down";
-//             downIcon.style.transform = "scale(1)";
-//         }, 200);
-        
-//     }
-// };
-
-
-
-
 // !load function
 function load() {
     document.body.style.opacity = 1;
@@ -149,134 +117,215 @@ const services = document.querySelector("#services");
 const aboutUs = document.querySelector("#about-us");
 const contactUs = document.querySelector("#contact-us");
 
-const homeButton = document.querySelector("#home-button");
-const servicesButton = document.querySelector("#services-button");
-const aboutUsButton = document.querySelector("#about-us-button");
-const contactUsButton = document.querySelector("#contact-us-button");
+const homeButton = document.querySelectorAll("#home-button");
+const servicesButton = document.querySelectorAll("#services-button");
+const aboutUsButton = document.querySelectorAll("#about-us-button");
+const contactUsButton = document.querySelectorAll("#contact-us-button");
 
 // ! services page
-servicesButton.addEventListener("click", e => {
-    e.preventDefault();
+servicesButton.forEach(item => {
+    item.addEventListener("click", e => {
+        e.preventDefault();
+        
+        homeButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+        servicesButton.forEach(btn => {
+            btn.style.color = "#fff";
+            btn.style.backgroundColor = "var(--hover)";
+        });
+        aboutUsButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+        contactUsButton.forEach(btn => {
+            btn.style.backgroundColor = "";
+            btn.style.color = "var(--p)";
+        });
 
-    homeButton.style.color = "var(--p)";
-    servicesButton.style.color = "#fff";
-    aboutUsButton.style.color = "var(--p)";
-    contactUsButton.style.color = "var(--p)";
+        home.style.backgroundColor = "#00000077";
+        nav.style.top = "2rem";
+    
+        logo.classList.add("animate__animated", "animate__fadeOutDown");
+        text.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
+        aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        contactUs.classList.remove("animate__animated", "animate__fadeInUp");
+        contactUs.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        services.style.visibility = "visible";
+        services.classList.remove("animate__animated", "animate__fadeOutDown");
+        services.classList.add("animate__animated", "animate__fadeInUp");
 
-    homeButton.style.backgroundColor = "";
-    servicesButton.style.backgroundColor = "var(--hover)";
-    aboutUsButton.style.backgroundColor = "";
-    contactUsButton.style.backgroundColor = "";
-
-    home.style.backgroundColor = "#00000077";
-    nav.style.top = "2rem";
-
-    logo.classList.add("animate__animated", "animate__fadeOutDown");
-    text.classList.add("animate__animated", "animate__fadeOutDown");
-
-    aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
-    aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
-
-    contactUs.classList.remove("animate__animated", "animate__fadeInUp");
-    contactUs.classList.add("animate__animated", "animate__fadeOutDown");
-
-    services.style.visibility = "visible";
-    services.classList.remove("animate__animated", "animate__fadeOutDown");
-    services.classList.add("animate__animated", "animate__fadeInUp");
+        document.querySelector("#mobile-nav").classList.add("animate__animated", "animate__fadeOut");
+        document.querySelector(".blur-effect").style.opacity = 0;
+        setTimeout(() => {        
+            document.querySelector("#mobile-nav").classList.remove("animate__animated", "animate__fadeIn");
+            document.querySelector("#mobile-nav").style.opacity = "0";
+            document.querySelector("#mobile-nav").style.display = "none";
+            document.querySelector(".blur-effect").style.display = "none";
+        }, 1000);
+    });
 });
 
 // ! home page
-homeButton.addEventListener("click", e => {
-    e.preventDefault();
+homeButton.forEach(item => {
+    item.addEventListener("click", e => {
+        e.preventDefault();
 
-    homeButton.style.color = "#fff";
-    servicesButton.style.color = "var(--p)";
-    aboutUsButton.style.color = "var(--p)";
-    contactUsButton.style.color = "var(--p)";
+        homeButton.forEach(btn => {
+            btn.style.color = "#fff";
+            btn.style.backgroundColor = "(--hover)";
+        });
+
+        servicesButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+
+        aboutUsButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+
+        contactUsButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
     
-    homeButton.style.backgroundColor = "var(--hover)";
-    servicesButton.style.backgroundColor = "";
-    aboutUsButton.style.backgroundColor = "";
-    contactUsButton.style.backgroundColor = "";
-
-    home.style.backgroundColor = "#00000066";
-    nav.style.top = "9.5rem";
-
-    logo.classList.remove("animate__animated", "animate__fadeOutDown");
-    text.classList.remove("animate__animated", "animate__fadeOutDown");
-    logo.classList.add("animate__animated", "animate__fadeInUp");
-    text.classList.add("animate__animated", "animate__fadeInUp");
-
-    aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
-    aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
+        home.style.backgroundColor = "#00000066";
+        nav.style.top = "9.5rem";
     
-    services.classList.remove("animate__animated", "animate__fadeInUp");
-    services.classList.add("animate__animated", "animate__fadeOutDown");
+        logo.classList.remove("animate__animated", "animate__fadeOutDown");
+        text.classList.remove("animate__animated", "animate__fadeOutDown");
+        logo.classList.add("animate__animated", "animate__fadeInUp");
+        text.classList.add("animate__animated", "animate__fadeInUp");
+    
+        aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
+        aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
+        
+        services.classList.remove("animate__animated", "animate__fadeInUp");
+        services.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        contactUs.classList.remove("animate__animated", "animate__fadeInUp");
+        contactUs.classList.add("animate__animated", "animate__fadeOutDown");
 
-    contactUs.classList.remove("animate__animated", "animate__fadeInUp");
-    contactUs.classList.add("animate__animated", "animate__fadeOutDown");
+        document.querySelector("#mobile-nav").classList.add("animate__animated", "animate__fadeOut");
+        document.querySelector(".blur-effect").style.opacity = 0;
+        setTimeout(() => {        
+            document.querySelector("#mobile-nav").classList.remove("animate__animated", "animate__fadeIn");
+            document.querySelector("#mobile-nav").style.opacity = "0";
+            document.querySelector("#mobile-nav").style.display = "none";
+            document.querySelector(".blur-effect").style.display = "none";
+        }, 1000);
+    });
 });
 
 // ! about us page
-aboutUsButton.addEventListener("click", e => {
-    e.preventDefault();
+aboutUsButton.forEach(item => {
+    item.addEventListener("click", e => {
+        e.preventDefault();
 
-    homeButton.style.color = "var(--p)";
-    servicesButton.style.color = "var(--p)";
-    aboutUsButton.style.color = "#fff";
-    contactUsButton.style.color = "var(--p)";
+        homeButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
 
-    homeButton.style.backgroundColor = "";
-    servicesButton.style.backgroundColor = "";
-    aboutUsButton.style.backgroundColor = "var(--hover)";
-    contactUsButton.style.backgroundColor = "";
+        servicesButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
 
-    home.style.backgroundColor = "#00000077";
-    nav.style.top = "2rem";
+        aboutUsButton.forEach(btn => {
+            btn.style.color = "#fff";
+            btn.style.backgroundColor = "var(--hover)";
+        });
 
-    logo.classList.add("animate__animated", "animate__fadeOutDown");
-    text.classList.add("animate__animated", "animate__fadeOutDown");
+        contactUsButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+    
+        home.style.backgroundColor = "#00000077";
+        nav.style.top = "2rem";
+    
+        logo.classList.add("animate__animated", "animate__fadeOutDown");
+        text.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        services.classList.remove("animate__animated", "animate__fadeInUp");
+        services.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        contactUs.classList.remove("animate__animated", "animate__fadeInUp");
+        contactUs.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        aboutUs.style.visibility = "visible";
+        aboutUs.classList.remove("animate__animated", "animate__fadeOutDown");
+        aboutUs.classList.add("animate__animated", "animate__fadeInUp");
 
-    services.classList.remove("animate__animated", "animate__fadeInUp");
-    services.classList.add("animate__animated", "animate__fadeOutDown");
-
-    contactUs.classList.remove("animate__animated", "animate__fadeInUp");
-    contactUs.classList.add("animate__animated", "animate__fadeOutDown");
-
-    aboutUs.style.visibility = "visible";
-    aboutUs.classList.remove("animate__animated", "animate__fadeOutDown");
-    aboutUs.classList.add("animate__animated", "animate__fadeInUp");
+        document.querySelector("#mobile-nav").classList.add("animate__animated", "animate__fadeOut");
+        document.querySelector(".blur-effect").style.opacity = 0;
+        setTimeout(() => {        
+            document.querySelector("#mobile-nav").classList.remove("animate__animated", "animate__fadeIn");
+            document.querySelector("#mobile-nav").style.opacity = "0";
+            document.querySelector("#mobile-nav").style.display = "none";
+            document.querySelector(".blur-effect").style.display = "none";
+        }, 1000);
+    });
 });
 
 // ! contact us page
-contactUsButton.addEventListener("click", e => {
-    e.preventDefault();
-
-    homeButton.style.color = "var(--p)";
-    servicesButton.style.color = "var(--p)";
-    aboutUsButton.style.color = "var(--p)";
-    contactUsButton.style.color = "#fff";
-
-    homeButton.style.backgroundColor = "";
-    servicesButton.style.backgroundColor = "";
-    aboutUsButton.style.backgroundColor = "";
-    contactUsButton.style.backgroundColor = "var(--hover";
-
-    home.style.backgroundColor = "#00000077";
-    nav.style.top = "2rem";
-
-    logo.classList.add("animate__animated", "animate__fadeOutDown");
-    text.classList.add("animate__animated", "animate__fadeOutDown");
-
-    services.classList.remove("animate__animated", "animate__fadeInUp");
-    services.classList.add("animate__animated", "animate__fadeOutDown");
-
-    aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
-    aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
-
-    contactUs.style.visibility = "visible";
-    contactUs.classList.remove("animate__animated", "animate__fadeOutDown");
-    contactUs.classList.add("animate__animated", "animate__fadeInUp");
+contactUsButton.forEach(item => {
+    item.addEventListener("click", e => {
+        e.preventDefault();
+    
+        homeButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+    
+        servicesButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+    
+        aboutUsButton.forEach(btn => {
+            btn.style.color = "var(--p)";
+            btn.style.backgroundColor = "";
+        });
+    
+        contactUsButton.forEach(btn => {
+            btn.style.color = "#fff";
+            btn.style.backgroundColor = "var(--hover)";
+        });
+    
+        home.style.backgroundColor = "#00000077";
+        nav.style.top = "2rem";
+    
+        logo.classList.add("animate__animated", "animate__fadeOutDown");
+        text.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        services.classList.remove("animate__animated", "animate__fadeInUp");
+        services.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        aboutUs.classList.remove("animate__animated", "animate__fadeInUp");
+        aboutUs.classList.add("animate__animated", "animate__fadeOutDown");
+    
+        contactUs.style.visibility = "visible";
+        contactUs.classList.remove("animate__animated", "animate__fadeOutDown");
+        contactUs.classList.add("animate__animated", "animate__fadeInUp");
+    
+        document.querySelector("#mobile-nav").classList.add("animate__animated", "animate__fadeOut");
+        document.querySelector(".blur-effect").style.opacity = 0;
+        setTimeout(() => {        
+            document.querySelector("#mobile-nav").classList.remove("animate__animated", "animate__fadeIn");
+            document.querySelector("#mobile-nav").style.opacity = "0";
+            document.querySelector("#mobile-nav").style.display = "none";
+            document.querySelector(".blur-effect").style.display = "none";
+        }, 1000);
+    });
 });
 
 
@@ -400,38 +449,28 @@ document.querySelector("#footer p").innerHTML = `${date.getFullYear()} &#169; Co
 
 
 
-// ! social media button
-const icon0 = document.querySelector(".icon0");
-const icon1 = document.querySelector(".icon1");
-const icon2 = document.querySelector(".icon2");
-const icon3 = document.querySelector(".icon3");
-let num = 1;
-icon0.addEventListener("click", () => {
-    if(num == 1){
-        icon1.style.bottom = "4rem";
-        icon1.style.right = "2.5rem";
-        icon1.style.transform = "scale(1)";
-    
-        icon2.style.top = "4rem";
-        icon2.style.right = "5.5rem";
-        icon2.style.transform = "scale(1)";
-    
-        icon3.style.right = "5rem";
-        icon3.style.transform = "scale(1)";
+// ! mobile nav
+const mobileButtonOpen = document.querySelector("#nav-mobile-open");
+const mobileButtonClose = document.querySelector("#nav-mobile-close");
 
-        num++;
-    } else {
-        icon1.style.bottom = "0";
-        icon1.style.right = "2.5rem";
-        icon1.style.transform = "scale(0)";
-    
-        icon2.style.top = "0";
-        icon2.style.right = "5.5rem";
-        icon2.style.transform = "scale(0)";
-    
-        icon3.style.right = "10em";
-        icon3.style.transform = "scale(0)";
-        
-        num--;
-    }
+mobileButtonOpen.addEventListener("click", () => {
+    document.querySelector(".blur-effect").style.display = "block";
+    setTimeout(() => {
+        document.querySelector(".blur-effect").style.opacity = 1;
+    }, 500);
+    document.querySelector("#mobile-nav").style.display = "flex";
+    document.querySelector("#mobile-nav").classList.remove("animate__animated", "animate__fadeOut");
+    document.querySelector("#mobile-nav").classList.add("animate__animated", "animate__fadeIn");
+    document.querySelector("#mobile-nav").style.opacity = "1";
+});
+
+mobileButtonClose.addEventListener("click", () => {
+    document.querySelector("#mobile-nav").classList.add("animate__animated", "animate__fadeOut");
+    document.querySelector(".blur-effect").style.opacity = 0;
+    setTimeout(() => {        
+        document.querySelector("#mobile-nav").classList.remove("animate__animated", "animate__fadeIn");
+        document.querySelector("#mobile-nav").style.opacity = "0";
+        document.querySelector("#mobile-nav").style.display = "none";
+        document.querySelector(".blur-effect").style.display = "none";
+    }, 1000);
 });
