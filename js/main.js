@@ -1,45 +1,45 @@
-// // !change background of first page
-// // const bg1 = document.querySelector("#bg1");
-// // const bg2 = document.querySelector("#bg2");
-// // const bg3 = document.querySelector("#bg3");
+// !change background of first page
+const bg1 = document.querySelector("#bg1");
+const bg2 = document.querySelector("#bg2");
+const bg3 = document.querySelector("#bg3");
 
-// // setTimeout(() => {
-// //     bg1.className = "close";
-// //     bg2.className = "open";
-// //     bg3.className = "close";
-// // }, 15000);
+setTimeout(() => {
+    bg1.className = "close";
+    bg2.className = "open";
+    bg3.className = "close";
+}, 15000);
 
-// // setTimeout(() => {
-// //     bg1.className = "close";
-// //     bg2.className = "close";
-// //     bg3.className = "open";
-// // }, 30000);
+setTimeout(() => {
+    bg1.className = "close";
+    bg2.className = "close";
+    bg3.className = "open";
+}, 30000);
 
-// // setTimeout(() => {
-// //     bg1.className = "open";
-// //     bg2.className = "close";
-// //     bg3.className = "close";
-// // }, 45000);
+setTimeout(() => {
+    bg1.className = "open";
+    bg2.className = "close";
+    bg3.className = "close";
+}, 45000);
 
-// // setInterval(() => {
-// //     setTimeout(() => {
-// //         bg1.className = "close";
-// //         bg2.className = "open";
-// //         bg3.className = "close";
-// //     }, 15000);
+setInterval(() => {
+    setTimeout(() => {
+        bg1.className = "close";
+        bg2.className = "open";
+        bg3.className = "close";
+    }, 15000);
 
-// //     setTimeout(() => {
-// //         bg1.className = "close";
-// //         bg2.className = "close";
-// //         bg3.className = "open";
-// //     }, 30000);
+    setTimeout(() => {
+        bg1.className = "close";
+        bg2.className = "close";
+        bg3.className = "open";
+    }, 30000);
 
-// //     setTimeout(() => {
-// //         bg1.className = "open";
-// //         bg2.className = "close";
-// //         bg3.className = "close";
-// //     }, 45000);
-// // }, 65000);
+    setTimeout(() => {
+        bg1.className = "open";
+        bg2.className = "close";
+        bg3.className = "close";
+    }, 45000);
+}, 65000);
 
 
 
