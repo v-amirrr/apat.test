@@ -178,7 +178,7 @@ homeButton.forEach(item => {
 
         homeButton.forEach(btn => {
             btn.style.color = "#fff";
-            btn.style.backgroundColor = "(--hover)";
+            btn.style.backgroundColor = "var(--hover)";
         });
 
         servicesButton.forEach(btn => {
@@ -444,7 +444,7 @@ const swiper = new Swiper('.swiper-container', {
 
 // ! footer
 const date = new Date();
-document.querySelector("#footer p").innerHTML = `${date.getFullYear()} &#169; Copyright`;
+document.querySelector("#footer-copyright").innerHTML = `${date.getFullYear()} &#169; Copyright`;
 
 
 
