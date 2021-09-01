@@ -82,6 +82,7 @@ body{
     position: absolute;
     inset: 0;
     z-index: -5;
+    border-radius: 0 0 50px 50px;
 }
 
 #bg1{
@@ -160,33 +161,33 @@ body{
 }
 
 #language{
-    /* background-color: #fff; */
     width: 12rem;
     height: 3rem;
     position: absolute;
     top: 3rem;
-    right: 3rem;
+    right: .4rem;
     z-index: 5;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 #language-icon{
-    color: var(--p);
-    cursor: pointer;
-    width: 5rem;
-    height: 3rem;
+    color: #fff;
     border-radius: 50%;
-    transition: background-color .5s, color .5s;
+    z-index: 6;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: background-color .5s, color .5s;
 }
 
 #language-icon span{
-    font-size: 2rem;
+    font-size: 2.6rem;
 }
 
 #language-icon:hover{
@@ -208,6 +209,7 @@ body{
 #language-change a{
     margin: .6rem;
     color: #fff;
+    font-size: 1.2rem;
 }
 
 #text{
@@ -632,6 +634,22 @@ body{
     height: 2px;
 }
 
+#nav-mobile-open{
+    position: absolute;
+    top: 2.5rem;
+    left: .2rem;
+    color: #fff;
+    border-radius: 50%;
+    display: none;
+    z-index: 6;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+#nav-mobile-open span{
+    font-size: 3rem;
+}
+
 #nav-mobile-close{
     position: absolute;
     right: 1rem;
@@ -656,17 +674,6 @@ body{
     margin: 1.2rem;
 }
 
-#nav-mobile-open{
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    font-size: 3rem;
-    color: #fff;
-    border-radius: 50%;
-    padding: .5rem;
-    display: none;
-    z-index: 6;
-}
 
 
 
@@ -686,31 +693,9 @@ body{
     }
 
     #language{
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
-        margin: 1.7rem;
         width: 5rem;
         height: 12rem;
-    }
-
-    #language-icon{
-        color: #fff;
-        padding: 0;
-        width: 4rem;
-        height: 5rem;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #language-icon span{
-        font-size: 2.5rem;
     }
 
     #language-change{
@@ -761,7 +746,6 @@ body{
         transition: all .4s;
         margin: 1rem !important;
     }
-
     
     .services-window.one, .services-window.two, .services-window.three{
         width: 100%;
